@@ -1,5 +1,6 @@
 #include <vector>
 #include <opencv2/opencv.hpp>
+#include "Binarization/Binarization.h"
 
 using namespace std;
 using namespace cv;

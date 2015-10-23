@@ -80,7 +80,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Binarization\Niblack.cpp" />
+    <ClCompile Include="Binarization\Otsu.cpp" />
+    <ClCompile Include="Binarization\Sauvola.cpp" />
     <ClCompile Include="Source.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Binarization\Binarization.h" />
+    <ClInclude Include="Binarization\Niblack.h" />
+    <ClInclude Include="Binarization\Otsu.h" />
+    <ClInclude Include="Binarization\Sauvola.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
