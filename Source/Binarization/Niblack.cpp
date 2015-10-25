@@ -1,45 +1,46 @@
 ﻿#include "Niblack.h"
 
-
 /*!
-Niblack二值化算法.
+Niblack binarization algorithm.
 
-@param src [in] Mat,原图像,灰度图CV_8UC1
-@param dst [out] Mat,二值化后的图像,调用时可为空
-@param filter_size [in] int,Niblack算法参数,表示模板大小
-@param k [in] int, Niblack算法参数,局部阈值计算参数
+@param src [in] Mat, single channel uchar image.
+@param dst [out] Mat, result image.
+@param windowSize [in] int, window size for calculation.
+@param k [in] int, parameter for local threshold.
+@return int, 0x0000 = Success.
 */
-int Niblack(InputArray src, OutputArray dst, int filter_size, float k)
+int Niblack(InputArray src, OutputArray dst, int windowSize, float k)
 {
-	assert(src.type() == CV_8UC1);
+	if (src.type() != CV_8UC1 || src.empty())	
+		return 0x0001;	/*!< source image type not supported. */
 
-	/*! 更新模板大小(应为奇数) */
-	int half_size = int(floor(0.5 * filter_size));
-	int full_size = 2 * half_size + 1;
-	assert(half_size > 0);
+	/*! update window size, which should be odd. */
+	if (windowSize < 2)	
+		return 0x0002;	/*!< window size not supported. */
+	if (windowSize / 2 == 0)
+		windowSize++;
 
-	Mat source_uchar = src.getMat();
 	Mat source, destination;
+	Mat sourceUchar = src.getMat();
+	sourceUchar.convertTo(source, CV_32FC1);
 
-	source_uchar.convertTo(source, CV_32FC1);
-
-	/*! 根据 D(x) = E(x^2) - (Ex)^2 的方法计算均值和方差 */
+	/*! calcalte mean and variance via
+	D(x) = E(x^2) - (Ex)^2 */
 	Mat avg, power, avg_power, power_avg;
 	Mat standard;
-	boxFilter(source, avg, -1, Size(full_size, full_size));
+	boxFilter(source, avg, -1, Size(windowSize, windowSize));
 	pow(avg, 2, avg_power);
 	pow(source, 2, power);
-	boxFilter(power, power_avg, -1, Size(full_size, full_size));
-	sqrt(power_avg - avg_power, standard);
+	boxFilter(power, power_avg, -1, Size(windowSize, windowSize));
+	sqrt(power_avg - power_avg, standard);
 
-	/*! 计算得到局部阈值 */
-	Mat threshold, threshold_uchar;
-	threshold = avg + k * standard;
+	/*! calculate local threshold */
+	Mat threshold = avg + k * standard;
 
-	/*! 输出结果 */
-	dst.create(source_uchar.size(), CV_8UC1);
+	/*! Output result */
+	dst.create(sourceUchar.size(), CV_8UC1);
 	destination = dst.getMat();
 	destination = source > threshold;
 
-	return 0;
+	return 0x0000;
 }
