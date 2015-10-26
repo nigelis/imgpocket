@@ -1,17 +1,16 @@
 ﻿#include "EndWithString.h"
 #include "SplitString.h"
 
-
 /*!
-筛选字符串数组中以特定字符串结尾的字符串.
+Filter string end with specified pattern.
 
-@param srcs [in] 源字符串数组
-@param patterns [in] 特定模式,彼此间以";"分割
-@param result [out] 筛选后的字符串数组
+@param srcs [in] vector<string>, source string.
+@param patterns [in] string, different pattern can be combined with ';', "jpg;png;" for example.
+@param result [out] vector<string>, output results.
 */
 int EndWithString(vector<string>& srcs, string patterns, vector<string>& result)
 {
-	/*! 从patterns中用";"分解得到独立的搜索条件 */
+	/*! get independent search pattern by dividing patterns with ';' */
 	vector<string> pattern;
 	SplitString(patterns, ";", pattern);
 
@@ -26,15 +25,15 @@ int EndWithString(vector<string>& srcs, string patterns, vector<string>& result)
 			}
 		}
 	}
-	return 0;
+	return 0x0000;
 }
 
 /*!
-判断字符串是否以特定字符串结尾.
+Decide whether the source string end with specified pattern.
 
-@param src [in] 源字符串
-@param pattern [in] 特定字符串,判断源字符串的尾部是否为它
-@return true=以特定字符串结尾,false=并不以特定字符串结尾
+@param src [in] string, source string.
+@param pattern [in] string, decide whether the specified string in the end of source string.
+@return true = end with specified pattern.
 */
 bool EndWithString(string src, string pattern)
 {
