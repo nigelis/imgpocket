@@ -83,6 +83,7 @@
     <ClCompile Include="Binarization\Niblack.cpp" />
     <ClCompile Include="Binarization\Otsu.cpp" />
     <ClCompile Include="Binarization\Sauvola.cpp" />
+    <ClCompile Include="Segmentation\RegionGrow.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +91,8 @@
     <ClInclude Include="Binarization\Niblack.h" />
     <ClInclude Include="Binarization\Otsu.h" />
     <ClInclude Include="Binarization\Sauvola.h" />
+    <ClInclude Include="Segmentation\RegionGrow.h" />
+    <ClInclude Include="Segmentation\Segmentation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -13,7 +13,7 @@
       <UniqueIdentifier>{edd1d034-3f54-421b-9213-4133c775fbc6}</UniqueIdentifier>
     </Filter>
     <Filter Include="Segmentation">
-      <UniqueIdentifier>{144bd9f0-5906-4bc3-be57-97553f115a50}</UniqueIdentifier>
+      <UniqueIdentifier>{8acf245d-88f0-4197-9373-d2de37d2a050}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -29,6 +29,9 @@
     <ClCompile Include="Binarization\Sauvola.cpp">
       <Filter>Binarization</Filter>
     </ClCompile>
+    <ClCompile Include="Segmentation\RegionGrow.cpp">
+      <Filter>Segmentation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Binarization\Binarization.h">
@@ -42,6 +45,12 @@
     </ClInclude>
     <ClInclude Include="Binarization\Sauvola.h">
       <Filter>Binarization</Filter>
+    </ClInclude>
+    <ClInclude Include="Segmentation\RegionGrow.h">
+      <Filter>Segmentation</Filter>
+    </ClInclude>
+    <ClInclude Include="Segmentation\Segmentation.h">
+      <Filter>Segmentation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
