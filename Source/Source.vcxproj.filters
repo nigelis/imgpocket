@@ -39,9 +39,6 @@
     <ClCompile Include="Segmentation\RegionGrow.cpp">
       <Filter>Segmentation</Filter>
     </ClCompile>
-    <ClCompile Include="Helper\PlotVector.cpp">
-      <Filter>Helper</Filter>
-    </ClCompile>
     <ClCompile Include="Helper\EndWithString.cpp">
       <Filter>Helper</Filter>
     </ClCompile>
@@ -49,6 +46,9 @@
       <Filter>Helper</Filter>
     </ClCompile>
     <ClCompile Include="Helper\SplitString.cpp">
+      <Filter>Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="Helper\Projection.cpp">
       <Filter>Helper</Filter>
     </ClCompile>
   </ItemGroup>
@@ -74,9 +74,6 @@
     <ClInclude Include="Helper\Helper.h">
       <Filter>Helper</Filter>
     </ClInclude>
-    <ClInclude Include="Helper\PlotVector.h">
-      <Filter>Helper</Filter>
-    </ClInclude>
     <ClInclude Include="Helper\EndWithString.h">
       <Filter>Helper</Filter>
     </ClInclude>
@@ -84,6 +81,9 @@
       <Filter>Helper</Filter>
     </ClInclude>
     <ClInclude Include="Helper\SplitString.h">
+      <Filter>Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper\Projection.h">
       <Filter>Helper</Filter>
     </ClInclude>
   </ItemGroup>

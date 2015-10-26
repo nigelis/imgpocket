@@ -85,7 +85,7 @@
     <ClCompile Include="Binarization\Sauvola.cpp" />
     <ClCompile Include="Helper\EndWithString.cpp" />
     <ClCompile Include="Helper\FileList.cpp" />
-    <ClCompile Include="Helper\PlotVector.cpp" />
+    <ClCompile Include="Helper\Projection.cpp" />
     <ClCompile Include="Helper\SplitString.cpp" />
     <ClCompile Include="Segmentation\RegionGrow.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -98,7 +98,7 @@
     <ClInclude Include="Helper\EndWithString.h" />
     <ClInclude Include="Helper\FileList.h" />
     <ClInclude Include="Helper\Helper.h" />
-    <ClInclude Include="Helper\PlotVector.h" />
+    <ClInclude Include="Helper\Projection.h" />
     <ClInclude Include="Helper\SplitString.h" />
     <ClInclude Include="Segmentation\RegionGrow.h" />
     <ClInclude Include="Segmentation\Segmentation.h" />
