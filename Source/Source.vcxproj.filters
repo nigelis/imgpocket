@@ -12,6 +12,9 @@
     <Filter Include="Binarization">
       <UniqueIdentifier>{edd1d034-3f54-421b-9213-4133c775fbc6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Segmentation">
+      <UniqueIdentifier>{144bd9f0-5906-4bc3-be57-97553f115a50}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
