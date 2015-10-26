@@ -83,6 +83,10 @@
     <ClCompile Include="Binarization\Niblack.cpp" />
     <ClCompile Include="Binarization\Otsu.cpp" />
     <ClCompile Include="Binarization\Sauvola.cpp" />
+    <ClCompile Include="Helper\EndWithString.cpp" />
+    <ClCompile Include="Helper\FileList.cpp" />
+    <ClCompile Include="Helper\PlotVector.cpp" />
+    <ClCompile Include="Helper\SplitString.cpp" />
     <ClCompile Include="Segmentation\RegionGrow.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
@@ -91,6 +95,11 @@
     <ClInclude Include="Binarization\Niblack.h" />
     <ClInclude Include="Binarization\Otsu.h" />
     <ClInclude Include="Binarization\Sauvola.h" />
+    <ClInclude Include="Helper\EndWithString.h" />
+    <ClInclude Include="Helper\FileList.h" />
+    <ClInclude Include="Helper\Helper.h" />
+    <ClInclude Include="Helper\PlotVector.h" />
+    <ClInclude Include="Helper\SplitString.h" />
     <ClInclude Include="Segmentation\RegionGrow.h" />
     <ClInclude Include="Segmentation\Segmentation.h" />
   </ItemGroup>

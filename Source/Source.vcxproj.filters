@@ -15,6 +15,13 @@
     <Filter Include="Segmentation">
       <UniqueIdentifier>{8acf245d-88f0-4197-9373-d2de37d2a050}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{ab30bb71-f0bc-4a52-9128-26a7f7d7d2be}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Helper">
+      <UniqueIdentifier>{9dcf2210-82f4-4cd3-8919-465604291c17}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -31,6 +38,18 @@
     </ClCompile>
     <ClCompile Include="Segmentation\RegionGrow.cpp">
       <Filter>Segmentation</Filter>
+    </ClCompile>
+    <ClCompile Include="Helper\PlotVector.cpp">
+      <Filter>Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="Helper\EndWithString.cpp">
+      <Filter>Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="Helper\FileList.cpp">
+      <Filter>Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="Helper\SplitString.cpp">
+      <Filter>Helper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +70,21 @@
     </ClInclude>
     <ClInclude Include="Segmentation\Segmentation.h">
       <Filter>Segmentation</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper\Helper.h">
+      <Filter>Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper\PlotVector.h">
+      <Filter>Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper\EndWithString.h">
+      <Filter>Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper\FileList.h">
+      <Filter>Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper\SplitString.h">
+      <Filter>Helper</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
