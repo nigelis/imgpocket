@@ -1,33 +1,32 @@
 ﻿#include "SplitString.h"
 
 /*!
-分割字符串.
-按照指定字符,分割原字符串
+Split string by specified seperater.
 
-@param str [in] 原始字符串
-@param separate [in] 分隔符
-@param result [out] 分割结果
+@param str [in] string, original string.
+@param separate [in] string, specified separater.
+@param result [out] vector<string>, splited result.
 */
 int SplitString(string str, string separate, vector<string>& result)
 {
-	int divide;	/*!< 指定分割字符串的位置*/
+	int divide;	/*!< position to split */
 	divide = 0;
 
-	str += separate;	/*!< 方便处理不存在分割符的情况*/
+	str += separate;	/*!< handle for situation separater don't exist in str */
 
 	while ((divide = str.find(separate)) != string::npos)
 	{
-		/*! 若divide为0,则意味着无有效的字符串可以被分割出来 */
 		if (divide != 0)
 		{
 			result.push_back(str.substr(0, divide));
-			str = str.substr(divide + 1);
+			str = str.substr(divide + separate.length());
 		}
 		else
 		{
-			str = str.substr(1);
+			/*! divide = 0 means no string before separater */
+			str = str.substr(separate.length());
 		}
 	}
 
-	return 0;
+	return 0x0000;
 }
