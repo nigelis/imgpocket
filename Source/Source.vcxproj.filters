@@ -51,6 +51,9 @@
     <ClCompile Include="Helper\Projection.cpp">
       <Filter>Helper</Filter>
     </ClCompile>
+    <ClCompile Include="Helper\PlotVector.cpp">
+      <Filter>Helper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Binarization\Binarization.h">
@@ -84,6 +87,9 @@
       <Filter>Helper</Filter>
     </ClInclude>
     <ClInclude Include="Helper\Projection.h">
+      <Filter>Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper\PlotVector.h">
       <Filter>Helper</Filter>
     </ClInclude>
   </ItemGroup>

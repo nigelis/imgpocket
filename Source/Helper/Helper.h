@@ -2,5 +2,6 @@
 
 #include "EndWithString.h"
 #include "FileList.h"
+#include "PlotVector.h"
 #include "Projection.h"
 #include "SplitString.h"
