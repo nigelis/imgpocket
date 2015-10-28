@@ -88,6 +88,7 @@
     <ClCompile Include="Helper\PlotVector.cpp" />
     <ClCompile Include="Helper\Projection.cpp" />
     <ClCompile Include="Helper\SplitString.cpp" />
+    <ClCompile Include="Resize\ResizeEdge.cpp" />
     <ClCompile Include="Segmentation\RegionGrow.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
@@ -102,6 +103,8 @@
     <ClInclude Include="Helper\PlotVector.h" />
     <ClInclude Include="Helper\Projection.h" />
     <ClInclude Include="Helper\SplitString.h" />
+    <ClInclude Include="Resize\Resize.h" />
+    <ClInclude Include="Resize\ResizeEdge.h" />
     <ClInclude Include="Segmentation\RegionGrow.h" />
     <ClInclude Include="Segmentation\Segmentation.h" />
   </ItemGroup>
