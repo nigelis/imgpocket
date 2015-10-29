@@ -25,6 +25,9 @@
     <Filter Include="Resize">
       <UniqueIdentifier>{71a7da4b-fb1d-4c9f-a0f5-67f9136eddd0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Draw">
+      <UniqueIdentifier>{1abdac75-a79d-46b9-9577-8942c791c2d9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -59,6 +62,9 @@
     </ClCompile>
     <ClCompile Include="Resize\ResizeEdge.cpp">
       <Filter>Resize</Filter>
+    </ClCompile>
+    <ClCompile Include="Draw\DrawLine.cpp">
+      <Filter>Draw</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +109,12 @@
     </ClInclude>
     <ClInclude Include="Resize\ResizeEdge.h">
       <Filter>Resize</Filter>
+    </ClInclude>
+    <ClInclude Include="Draw\Draw.h">
+      <Filter>Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="Draw\DrawLine.h">
+      <Filter>Draw</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
