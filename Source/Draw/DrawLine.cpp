@@ -38,7 +38,7 @@ int DrawEdgeLine(InputOutputArray src, Point2f p1, Point2f p2)
 
 			while(true)
 			{
-				source.at<uchar>(static_cast<int>(x), static_cast<int>(y)) = 255;
+				source.at<uchar>(static_cast<int>(y), static_cast<int>(x)) = 255;
 				x += step;
 				y += 1;
 				if (y >= endY) break;
@@ -51,7 +51,7 @@ int DrawEdgeLine(InputOutputArray src, Point2f p1, Point2f p2)
 
 			while(true)
 			{
-				source.at<uchar>(static_cast<int>(x), static_cast<int>(y)) = 255;
+				source.at<uchar>(static_cast<int>(y), static_cast<int>(x)) = 255;
 				x += 1;
 				y += k;
 				if (x >= endX) break;
@@ -67,7 +67,7 @@ int DrawEdgeLine(InputOutputArray src, Point2f p1, Point2f p2)
 
 			while (true)
 			{
-				source.at<uchar>(static_cast<int>(x), static_cast<int>(y)) = 255;
+				source.at<uchar>(static_cast<int>(y), static_cast<int>(x)) = 255;
 				x -= step;
 				y -= 1;
 				if (y <= endY) break;
@@ -80,7 +80,7 @@ int DrawEdgeLine(InputOutputArray src, Point2f p1, Point2f p2)
 
 			while (true)
 			{
-				source.at<uchar>(static_cast<int>(x), static_cast<int>(y)) = 255;
+				source.at<uchar>(static_cast<int>(y), static_cast<int>(x)) = 255;
 				x += 1;
 				y += k;
 				if (x >= endX) break;
