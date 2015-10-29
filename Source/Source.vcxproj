@@ -83,6 +83,7 @@
     <ClCompile Include="Binarization\Niblack.cpp" />
     <ClCompile Include="Binarization\Otsu.cpp" />
     <ClCompile Include="Binarization\Sauvola.cpp" />
+    <ClCompile Include="Draw\DrawLine.cpp" />
     <ClCompile Include="Helper\EndWithString.cpp" />
     <ClCompile Include="Helper\FileList.cpp" />
     <ClCompile Include="Helper\PlotVector.cpp" />
@@ -97,6 +98,8 @@
     <ClInclude Include="Binarization\Niblack.h" />
     <ClInclude Include="Binarization\Otsu.h" />
     <ClInclude Include="Binarization\Sauvola.h" />
+    <ClInclude Include="Draw\Draw.h" />
+    <ClInclude Include="Draw\DrawLine.h" />
     <ClInclude Include="Helper\EndWithString.h" />
     <ClInclude Include="Helper\FileList.h" />
     <ClInclude Include="Helper\Helper.h" />
