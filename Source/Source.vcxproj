@@ -89,7 +89,10 @@
     <ClCompile Include="Helper\PlotVector.cpp" />
     <ClCompile Include="Helper\Projection.cpp" />
     <ClCompile Include="Helper\SplitString.cpp" />
+    <ClCompile Include="Hist\BasicHist.cpp" />
     <ClCompile Include="Resize\ResizeEdge.cpp" />
+    <ClCompile Include="Saliency\dllmain.cpp" />
+    <ClCompile Include="Saliency\Saliency.cpp" />
     <ClCompile Include="Segmentation\RegionGrow.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
@@ -106,8 +109,13 @@
     <ClInclude Include="Helper\PlotVector.h" />
     <ClInclude Include="Helper\Projection.h" />
     <ClInclude Include="Helper\SplitString.h" />
+    <ClInclude Include="Hist\BasicHist.h" />
+    <ClInclude Include="Hist\Hist.h" />
     <ClInclude Include="Resize\Resize.h" />
     <ClInclude Include="Resize\ResizeEdge.h" />
+    <ClInclude Include="Saliency\disjoint-set.h" />
+    <ClInclude Include="Saliency\Saliency.h" />
+    <ClInclude Include="Saliency\segment-graph.h" />
     <ClInclude Include="Segmentation\RegionGrow.h" />
     <ClInclude Include="Segmentation\Segmentation.h" />
   </ItemGroup>

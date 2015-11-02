@@ -28,6 +28,12 @@
     <Filter Include="Draw">
       <UniqueIdentifier>{1abdac75-a79d-46b9-9577-8942c791c2d9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Hist">
+      <UniqueIdentifier>{74e3b85e-dd1e-40c0-8648-eb569d9b80df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Saliency">
+      <UniqueIdentifier>{2e044ad6-566d-464f-9e8c-57eec2931f4d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -65,6 +71,15 @@
     </ClCompile>
     <ClCompile Include="Draw\DrawLine.cpp">
       <Filter>Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="Hist\BasicHist.cpp">
+      <Filter>Hist</Filter>
+    </ClCompile>
+    <ClCompile Include="Saliency\dllmain.cpp">
+      <Filter>Saliency</Filter>
+    </ClCompile>
+    <ClCompile Include="Saliency\Saliency.cpp">
+      <Filter>Saliency</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +130,21 @@
     </ClInclude>
     <ClInclude Include="Draw\DrawLine.h">
       <Filter>Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="Hist\Hist.h">
+      <Filter>Hist</Filter>
+    </ClInclude>
+    <ClInclude Include="Hist\BasicHist.h">
+      <Filter>Hist</Filter>
+    </ClInclude>
+    <ClInclude Include="Saliency\disjoint-set.h">
+      <Filter>Saliency</Filter>
+    </ClInclude>
+    <ClInclude Include="Saliency\Saliency.h">
+      <Filter>Saliency</Filter>
+    </ClInclude>
+    <ClInclude Include="Saliency\segment-graph.h">
+      <Filter>Saliency</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
