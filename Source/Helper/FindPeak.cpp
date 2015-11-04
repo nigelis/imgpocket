@@ -1,12 +1,13 @@
 ﻿#include "FindPeak.h"
 
+/*! Define parameter for finding peaks. */
 #ifndef FIND_PEAK_PARAMETER
 #define FIND_PEAK_PARAMETER
 
-#define PEAK_REGION_WIDTH_MAX 5
-#define PEAK_REGION_WIDTH_HALF 2
-#define PEAK_REGION_COUNT_MAX 5
-#define PEAK_POINT_COUNT_MAX 25
+#define PEAK_REGION_WIDTH_MAX	5	/*!< maximum peak region width. */
+#define PEAK_REGION_WIDTH_HALF	2	/*!< half of PEAK_REGION_WIDTH_HALF */
+#define PEAK_REGION_COUNT_MAX	5	/*!< maximum acceptable region counts. */
+#define PEAK_POINT_COUNT_MAX	25	/*!< PEAK_REGION_WIDTH_MAX multiply by PEAK_POINT_COUNT_MAX */
 
 #endif
 
@@ -39,7 +40,7 @@ int FindPeak(InputArray src, vector<PeakRegion>& peaks)
 	}
 
 
-	/*! Get region peak. */
+	/*! Get peak in regions. */
 	peaks.clear();
 	vector<PeakRegion> regions;
 
@@ -68,10 +69,16 @@ int FindPeak(InputArray src, vector<PeakRegion>& peaks)
 	}
 
 	/*! Ignore regions whose peak value is below threshold */
-	double PeakAmplitudeThreshold = max(regions[0].peak.value*0.1, regions[1].peak.value * 0.2);
+	double PeakAmplitudeThreshold;
+	if (regions[1].peak.value * 0.5 > regions[2].peak.value)
+		PeakAmplitudeThreshold = max(regions[0].peak.value*0.1, regions[1].peak.value * 0.25);
+	else
+		PeakAmplitudeThreshold = max(regions[0].peak.value*0.1, regions[2].peak.value * 0.5);
+
 	for (int i = 0; i < PEAK_REGION_COUNT_MAX; i++)
 	{
-		if (regions[i].peak.value >= PeakAmplitudeThreshold) peaks.push_back(regions[i]);
+		if (regions[i].peak.value >= PeakAmplitudeThreshold) 
+			peaks.push_back(regions[i]);
 	}
 
 	/*! Expand the region of peak by threshold amplitude threshold and slope threshold. */
