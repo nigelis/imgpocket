@@ -9,7 +9,7 @@ int BasicHist(InputArray src, OutputArray hist)
 	Mat source = src.getMat();
 	CV_Assert(!source.empty() && source.type() == CV_8UC1);
 
-	float summary[BISIC_HIST_BIN_SIZE] = {0.0F};
+	int summary[BISIC_HIST_BIN_SIZE] = {0};
 
 	auto start = source.begin<uchar>();
 	auto end = source.end<uchar>();
@@ -24,7 +24,7 @@ int BasicHist(InputArray src, OutputArray hist)
 	Mat destination = hist.getMat();
 	for (int i = 0; i < BISIC_HIST_BIN_SIZE; i++)
 	{
-		destination.at<float>(i) = summary[i];
+		destination.at<float>(i) = static_cast<float>(summary[i]);
 	}
 
 	return 0x0000;
