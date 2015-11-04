@@ -81,6 +81,9 @@
     <ClCompile Include="Saliency\Saliency.cpp">
       <Filter>Saliency</Filter>
     </ClCompile>
+    <ClCompile Include="Helper\FindPeak.cpp">
+      <Filter>Helper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Binarization\Binarization.h">
@@ -145,6 +148,9 @@
     </ClInclude>
     <ClInclude Include="Saliency\segment-graph.h">
       <Filter>Saliency</Filter>
+    </ClInclude>
+    <ClInclude Include="Helper\FindPeak.h">
+      <Filter>Helper</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
