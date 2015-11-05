@@ -95,6 +95,7 @@
     <ClCompile Include="Saliency\dllmain.cpp" />
     <ClCompile Include="Saliency\Saliency.cpp" />
     <ClCompile Include="Segmentation\RegionGrow.cpp" />
+    <ClCompile Include="Segmentation\SegmentationBySaliencyPeak.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +121,7 @@
     <ClInclude Include="Saliency\segment-graph.h" />
     <ClInclude Include="Segmentation\RegionGrow.h" />
     <ClInclude Include="Segmentation\Segmentation.h" />
+    <ClInclude Include="Segmentation\SegmentationBySaliencyPeak.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
