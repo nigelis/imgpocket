@@ -21,7 +21,8 @@ But also those points whose slope are in a certain range.
 struct PeakRegion
 {
 	PeakPoint peak;				/*!< peak center. */
-	vector<PeakPoint> region;	/*!< all points in peak region. */
+	vector<PeakPoint> region;	/*!< all peak points in peak region. */
+	double values;				/*!< value sum of all peak points. */
 	int minIndex;				/*!< minimum index in peak region. */
 	int maxIndex;				/*!< maximum index in peak region. */
 };

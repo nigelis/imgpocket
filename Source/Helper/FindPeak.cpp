@@ -63,6 +63,7 @@ int FindPeak(InputArray src, vector<PeakRegion>& peaks)
 		PeakRegion region;
 		region.peak = point;
 		region.region.push_back(point);
+		region.values = point.value;
 		regions.push_back(region);
 
 		if (regions.size() >= PEAK_REGION_COUNT_MAX) break;
@@ -97,7 +98,11 @@ int FindPeak(InputArray src, vector<PeakRegion>& peaks)
 			double amplitude = point.value;
 			double slope = abs((region.peak.value - point.value) / (region.peak.index - point.index));
 
-			if (amplitude >= amplitudeThreshold && slope <= slopeThreshold) region.region.push_back(point);
+			if (amplitude >= amplitudeThreshold && slope <= slopeThreshold)
+			{
+				region.region.push_back(point);
+				region.values += point.value;
+			}
 		}
 
 		region.minIndex = region.peak.index;
