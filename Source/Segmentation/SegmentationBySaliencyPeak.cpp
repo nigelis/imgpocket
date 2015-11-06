@@ -1,6 +1,7 @@
 ﻿#include "SegmentationBySaliencyPeak.h"
 #include "../Hist/BasicHist.h"
-#include "../Helper/FindPeak.h"
+#include "../Helper/Helper.h"
+#include "RegionGrow.h"
 
 /*! Store information about contours for contour merging. */
 struct ContourInfo
@@ -16,28 +17,41 @@ int SegmentationBySaliencyPeak(InputArray saliency, OutputArray area)
 
 	Mat hist;		/*!< histogram of saliency. */
 	BasicHist(source, hist);
+	Mat plot;
+	PlotVector(hist, plot, Size(256, 400));
 
 	vector<PeakRegion> peaks;	/*!< peaks in histogram, indicating interest area. */
 	vector<Mat> regions;
 	FindPeak(hist, peaks);
 
-	area.create(source.size(), CV_8UC1);
-	Mat result = area.getMat();
-	result = Mat::zeros(source.size(), CV_8UC1);
-
-	if (static_cast<int>(peaks.size()) == 1)	/*!< the only salient region will be interest area. */
+	/*! filter peaks. */
+	vector<PeakRegion> filterPeaks;
+	double thres = peaks[0].peak.value * 0.25;
+	for (int i = 0; i < static_cast<int>(peaks.size()); i++)
 	{
+		if (peaks[i].peak.value >= thres) filterPeaks.push_back(peaks[i]);
+	}
+
+	if (static_cast<int>(filterPeaks.size()) == 1)
+	{
+		/*!
+		if there is only one saliency peak region,
+		assuming it will be the interest area. */
 		Mat interest;
-		if (peaks[0].minIndex == peaks[0].maxIndex)
-			interest = source == peaks[0].minIndex;
+		
+		if (filterPeaks[0].minIndex == filterPeaks[0].maxIndex)
+			interest = source == filterPeaks[0].minIndex;
 		else
-			interest = source >= peaks[0].minIndex & source <= peaks[0].maxIndex;
+			interest = source >= filterPeaks[0].minIndex & source <= filterPeaks[0].maxIndex;
 
-		interest.copyTo(result);
+		Mat morphology;
+		Mat element = getStructuringElement(MORPH_ELLIPSE, Size(3, 3));
+		morphologyEx(interest, morphology, MORPH_OPEN, element);
+		morphologyEx(morphology, morphology, MORPH_CLOSE, element);
+		RegionGrow(saliency, area, morphology, 1);
 
-		imshow("RESULT", result);
-		waitKey();
-		destroyAllWindows();
+		Mat ou = area.getMat();
+		int a = 0;
 	}
 
 #pragma region comments
