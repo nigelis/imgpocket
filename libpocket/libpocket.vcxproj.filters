@@ -158,5 +158,8 @@
     <ClInclude Include="Segmentation\SegmentationBySaliencyPeak.h">
       <Filter>Segmentation</Filter>
     </ClInclude>
+    <ClInclude Include="imgpocket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
